@@ -76,7 +76,7 @@ public class Tasks {
                         " 5 - clearType \n" +
                         " 6 - merge \n" +
                         " 7 - help \n" +
-                        " 0 - выход");
+                        " 0 - выход из программы");
                 switch (Integer.parseInt(reader.readLine())) {
                     case 1:
                         System.out.println("Инициализация массива:");
@@ -91,7 +91,7 @@ public class Tasks {
                         printType();
                         break;
                     case 4:
-                        System.out.println("Вывод чисел не вошедших в списоки:");
+                        System.out.println("Вывод чисел не вошедших в списки:");
                         anyMore();
                         break;
                     case 5:
@@ -107,7 +107,7 @@ public class Tasks {
                         help();
                         break;
                     case 0:
-                        System.out.println("Выход из программы");
+                        System.out.println("Вы выщли из программы");
                         exit = false;
                 }
             } catch (IOException e) {
@@ -236,7 +236,7 @@ public class Tasks {
                 "init array\t- инициализация списков набором значений array\n" +
                 "print \t\t- печать всех списков \n" +
                 "print type \t- печать конкретного списка, где type принимает значения X,S,M\n" +
-                "anyMore\t\t- выводит на экран были ли значения не вошедшие ни в один список, возможные значения true, false\n" +
+                "anyMore\t\t- выводит на экран были ли значения не вошедшие ни в один список \n" +
                 "clear type\t- чистка списка , где type принимает значения X,S,M\n" +
                 "merge\t\t- слить все списки в один вывести на экран и очистить все списки");
     }
