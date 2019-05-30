@@ -107,7 +107,7 @@ public class Tasks {
                         help();
                         break;
                     case 0:
-                        System.out.println("Вы выщли из программы");
+                        System.out.println("Вы вышли из программы");
                         exit = false;
                 }
             } catch (IOException e) {
