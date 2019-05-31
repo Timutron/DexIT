@@ -11,14 +11,14 @@ public class Tasks {
     List<Integer> initialize = new ArrayList<>();
     List<Integer> otherNumbers = new ArrayList<>();
     List<Integer> mergeList = new ArrayList<>();
-    Integer[] list;
+    Integer[] list = new Integer[0];
     boolean exit = true;
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public void Start(){
 
         try {
-            System.out.println("Выберите тип заполнение массива числами:\n" +
+            System.out.println("Выберите тип заполнения массива числами:\n" +
                     " 1 - Заполнить массив самостоятельно\n" +
                     " 2 - Автозаполнение массива");
             switch (Integer.parseInt(reader.readLine())){
@@ -44,12 +44,16 @@ public class Tasks {
             System.out.println("Ошибка: Введите число соответствующее пункту");
         }
 
-        Arrays.sort(list);
+
         System.out.println("Массив содержит данные числа:");
+        if (list.length == 0)
+            System.out.println("Из за некорректного ввода массив не заполнился, перезапустите программу");
+        else
         for (int i = 0; i < list.length ; i++) {
             System.out.print(list[i] + " ");
         }
         System.out.println();
+        Arrays.sort(list);
 
         for (int i = 0; i < list.length; i++) {
             if (list[i]%3 == 0){
