@@ -15,13 +15,13 @@ public class Tasks {
     boolean exit = true;
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-    public void Start(){
+    public void Start() {
 
         try {
             System.out.println("Выберите тип заполнения массива числами:\n" +
                     " 1 - Заполнить массив самостоятельно\n" +
                     " 2 - Автозаполнение массива");
-            switch (Integer.parseInt(reader.readLine())){
+            switch (Integer.parseInt(reader.readLine())) {
                 case 1:
                     System.out.println("Сколько чисел должно быть в массиве? Введите колличество:");
                     int listLength = Integer.parseInt(reader.readLine());
@@ -38,34 +38,33 @@ public class Tasks {
                         list[i] = random.nextInt(1000) + 1;
                     }
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             System.out.println("Ошибка : Некорректный ввод");
         } catch (NumberFormatException e) {
             System.out.println("Ошибка: Введите число соответствующее пункту");
         }
 
-
         System.out.println("Массив содержит данные числа:");
         if (list.length == 0)
             System.out.println("Из за некорректного ввода массив не заполнился, перезапустите программу");
         else
-        for (int i = 0; i < list.length ; i++) {
-            System.out.print(list[i] + " ");
-        }
+            for (int i = 0; i < list.length; i++) {
+                System.out.print(list[i] + " ");
+            }
         System.out.println();
         Arrays.sort(list);
 
         for (int i = 0; i < list.length; i++) {
-            if (list[i]%3 == 0){
+            if (list[i] % 3 == 0) {
                 arrayX.add(list[i]);
             }
-            if (list[i]%7 == 0){
+            if (list[i] % 7 == 0) {
                 arrayS.add(list[i]);
             }
-            if (list[i]%21 == 0){
+            if (list[i] % 21 == 0) {
                 arrayM.add(list[i]);
             }
-            if (list[i]%3 != 0 && list[i]%7 != 0 && list[i]%21 != 0){
+            if (list[i] % 3 != 0 && list[i] % 7 != 0 && list[i] % 21 != 0) {
                 otherNumbers.add(list[i]);
             }
         }
@@ -121,7 +120,8 @@ public class Tasks {
             }
         }
     }
-    public void initArray(){
+
+    public void initArray() {
         Collections.addAll(initialize, list);
         for (int i = 0; i < initialize.size(); i++) {
             System.out.print(initialize.get(i) + " ");
@@ -129,31 +129,32 @@ public class Tasks {
         System.out.println();
     }
 
-    public void print(){
+    public void print() {
         System.out.println("\nчисла которые можно поделить без остатка на 3:");
         if (arrayX.isEmpty())
             System.out.print("Этот список пуст");
         else
-        for (int j = 0; j < arrayX.size(); j++) {
-            System.out.print(arrayX.get(j) + " ");
-        }
+            for (int j = 0; j < arrayX.size(); j++) {
+                System.out.print(arrayX.get(j) + " ");
+            }
         System.out.println("\nчисла которые можно поделить без остатка на 7:");
         if (arrayS.isEmpty())
             System.out.print("Этот список пуст");
         else
-        for (int j = 0; j < arrayS.size(); j++) {
-            System.out.print(arrayS.get(j) + " ");
-        }
+            for (int j = 0; j < arrayS.size(); j++) {
+                System.out.print(arrayS.get(j) + " ");
+            }
         System.out.println("\nчисла которые можно поделить без остатка на 21:");
         if (arrayM.isEmpty())
             System.out.print("Этот список пуст");
         else
-        for (int j = 0; j < arrayM.size(); j++) {
-            System.out.print(arrayM.get(j) + " ");
-        }
+            for (int j = 0; j < arrayM.size(); j++) {
+                System.out.print(arrayM.get(j) + " ");
+            }
         System.out.println();
     }
-    public void printType(){
+
+    public void printType() {
         try {
             List temp;
             System.out.println("Выберите список: \n" +
@@ -178,19 +179,21 @@ public class Tasks {
                 System.out.print(temp.get(i) + " ");
             }
             System.out.println();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Ошибка : Некорректный ввод");
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Ошибка: Введите число соответствующее пункту");
         }
     }
-    public void anyMore(){
+
+    public void anyMore() {
         for (int i = 0; i < otherNumbers.size(); i++) {
             System.out.print(otherNumbers.get(i) + " ");
         }
         System.out.println();
     }
-    public void clearType(){
+
+    public void clearType() {
         try {
             List temp;
             System.out.println("Выбирите список для удаления: \n" +
@@ -217,13 +220,14 @@ public class Tasks {
                 System.out.print(temp.get(i) + " ");
             }
             System.out.println();
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Ошибка : Некорректный ввод");
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             System.out.println("Ошибка: Введите число соответствующее пункту");
         }
     }
-    public void merge(){
+
+    public void merge() {
         mergeList.addAll(arrayX);
         mergeList.addAll(arrayS);
         mergeList.addAll(arrayM);
@@ -235,14 +239,15 @@ public class Tasks {
         arrayS.clear();
         arrayM.clear();
     }
-    public void help(){
+
+    public void help() {
         System.out.println(
                 "init array\t- инициализация списков набором значений array\n" +
-                "print \t\t- печать всех списков \n" +
-                "print type \t- печать конкретного списка, где type принимает значения X,S,M\n" +
-                "anyMore\t\t- выводит на экран были ли значения не вошедшие ни в один список \n" +
-                "clear type\t- чистка списка , где type принимает значения X,S,M\n" +
-                "merge\t\t- слить все списки в один вывести на экран и очистить все списки");
+                        "print \t\t- печать всех списков \n" +
+                        "print type \t- печать конкретного списка, где type принимает значения X,S,M\n" +
+                        "anyMore\t\t- выводит на экран были ли значения не вошедшие ни в один список \n" +
+                        "clear type\t- чистка списка , где type принимает значения X,S,M\n" +
+                        "merge\t\t- слить все списки в один вывести на экран и очистить все списки");
     }
 
 }
